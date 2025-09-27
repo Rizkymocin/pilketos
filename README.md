@@ -32,6 +32,7 @@ Dibangun menggunakan **Laravel** sebagai backend (API) dan **Next.js** sebagai f
 ---
 
 ## 📂 Struktur Proyek
+```bash
 project-root/
 ├── backend/ # Laravel API
 │ ├── app/
@@ -42,6 +43,7 @@ project-root/
 │ ├── pages/
 │ └── ...
 └── README.md
+```
 
 ## ⚙️ Instalasi & Menjalankan Proyek
 
