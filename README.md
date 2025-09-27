@@ -99,11 +99,11 @@ Password: password
 ---
 
 ## 🤝 Kontribusi
--Fork repositori ini
--Buat branch baru (git checkout -b fitur-baru)
--Commit perubahan (git commit -m 'Tambah fitur X')
--Push ke branch (git push origin fitur-baru)
--Buat Pull Request
+1. Fork repositori ini
+2. Buat branch baru (git checkout -b fitur-baru)
+3. Commit perubahan (git commit -m 'Tambah fitur X')
+4. Push ke branch (git push origin fitur-baru)
+5. Buat Pull Request
 
 ---
 
