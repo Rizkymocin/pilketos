@@ -45,6 +45,8 @@ project-root/
 └── README.md
 ```
 
+---
+
 ## ⚙️ Instalasi & Menjalankan Proyek
 
 ### 1. Clone Repository
@@ -71,7 +73,9 @@ npm install
 npm run dev
 ```
 Next.js akan berjalan di http://localhost:3000
+
 ---
+
 ## 🔑 Akun Default
 Jika menggunakan seeder:
 
@@ -86,21 +90,29 @@ Pemilih (Siswa)
 Email: siswa@osis.com
 
 Password: password
+
 ---
+
 ## 📸 Demo Screenshot
 (No Demo at the moment)
+
 ---
+
 ## 🤝 Kontribusi
 -Fork repositori ini
 -Buat branch baru (git checkout -b fitur-baru)
 -Commit perubahan (git commit -m 'Tambah fitur X')
 -Push ke branch (git push origin fitur-baru)
 -Buat Pull Request
+
 ---
+
 ## 📜 Lisensi
 Proyek ini dilisensikan di bawah MIT License.
 Silakan gunakan, ubah, dan kembangkan sesuai kebutuhan.
+
 ---
+
 ## 👨‍💻 Author
 Dikembangkan oleh Rizkymocin
 📧 Email: rizky.mohi30@gmail.com
