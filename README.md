@@ -42,7 +42,7 @@ project-root/
 │ ├── pages/
 │ └── ...
 └── README.md
----
+
 ## ⚙️ Instalasi & Menjalankan Proyek
 
 ### 1. Clone Repository
