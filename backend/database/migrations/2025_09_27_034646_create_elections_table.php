@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('elections', function (Blueprint $table) {
             $table->id();
             $table->string('public_id');
-            $table->foreignId('school_id')->references('schools')->onDelete('cascade');
+            $table->foreignId('school_id')->references('id')->on('schools')->onDelete('cascade');
             $table->year('election_year');
             $table->timestamp('voting_day');
             $table->timestamps();
