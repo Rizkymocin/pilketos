@@ -9,6 +9,7 @@ class Election extends Model
     protected $fillable = [
         'public_id',
         'school_id',
+        'code_number',
         'election_year',
         'voting_day'
     ];

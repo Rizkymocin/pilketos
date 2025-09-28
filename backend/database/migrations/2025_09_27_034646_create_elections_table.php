@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('public_id');
             $table->foreignId('school_id')->references('id')->on('schools')->onDelete('cascade');
+            $table->string('code_number');
             $table->year('election_year');
             $table->timestamp('voting_day');
             $table->timestamps();
