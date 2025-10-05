@@ -46,4 +46,20 @@ class AuthController extends Controller
             'message' => 'Logged Out'
         ]);
     }
+
+    public function verifyToken(Request $request){
+        $user = $request->user()->currentAccessToken();
+
+        if(!$user){
+            return response()->json([
+                'status' => false,
+                'message' => 'Invalid Token'
+            ], 401);
+        }
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Valid Token'
+        ]);
+    }
 }
