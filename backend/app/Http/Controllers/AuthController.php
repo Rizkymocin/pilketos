@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\School;
+use App\Models\SchoolPic;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -35,7 +37,36 @@ class AuthController extends Controller
     }
 
     public function register(Request $request){
-        
+        $validated = $request->validate([
+            'email' => 'required|email|unique:users',
+            'name' => 'required|string',
+            'password' => 'required|min:8|confirmed',
+            'school' => 'required'
+        ]);
+
+
+        $user = User::create($validated);
+        $school = School::where('public_id', $validated['school']['id'])->firstOrCreate([
+            'public_id' => $validated['school']['id'],
+            'school_name' => $validated['school']['sekolah'],
+            'address' => $validated['school']['alamat_jalan'] . ' ' . $validated['school']['kecamatan'] . ' ' . $validated['school']['kabupaten_kota'] . ' ' . $validated['school']['propinsi'],
+            'principal_name' => '',
+        ]);
+
+        $user->assignRole('pic');
+
+        $pic = SchoolPic::create([
+            'user_id' => $user->id,
+            'name' => $validated['name'],
+            'school_id' => $school->id,
+            'occupation' => 'Pengurus/Pembina Osis'
+        ]);
+
+        return response()->json([
+            'status' => true,
+            'message' => 'User Registered Succesfully',
+            'data' => $user
+        ]);
     }
 
     public function logout(Request $request) {

@@ -12,4 +12,8 @@ class School extends Model
         'address',
         'principal_name',
     ];
+
+    public function pic(){
+        return $this->hasMany(SchoolPic::class);
+    }
 }

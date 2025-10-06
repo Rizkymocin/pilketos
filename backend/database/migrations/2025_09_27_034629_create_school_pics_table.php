@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('school_pics', function (Blueprint $table) {
             $table->id();
-            $table->string('public_id');
+            $table->uuid('public_id')->unique()->index();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('school_id')->references('id')->on('schools')->onDelete('cascade');
             $table->string('name');
             $table->string('occupation');
             $table->timestamps();
