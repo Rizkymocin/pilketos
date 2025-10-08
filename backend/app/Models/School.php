@@ -16,4 +16,8 @@ class School extends Model
     public function pic(){
         return $this->hasMany(SchoolPic::class);
     }
+
+    public function departments(){
+        return $this->hasMany(Department::class);
+    }
 }

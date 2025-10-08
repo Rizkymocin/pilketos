@@ -93,4 +93,13 @@ class AuthController extends Controller
             'message' => 'Valid Token'
         ]);
     }
+
+
+    public function getUserRole(Request $request){
+        $user = $request->user()->load('roles');
+
+        return response()->json([
+            'roles' => $user->roles->pluck('name')
+        ]);
+    }
 }

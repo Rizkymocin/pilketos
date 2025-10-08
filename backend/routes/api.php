@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\SchoolController;
+use App\Models\Department;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,5 +24,10 @@ Route::middleware("auth:sanctum")->group(function() {
         ]); 
     });
 
+    Route::get('/role', [AuthController::class, 'getUserRole']);
+
     Route::get('/schoolByPicEmail', [SchoolController::class, 'getSchoolByPicEmail']);
+    Route::get('/departmentsBySchoolPic', [DepartmentController::class, 'getDepartmentsBySchoolPic']);
+    Route::post('/departmentByPic', [DepartmentController::class, 'storeByPic']);
+    Route::apiResource('department', DepartmentController::class);
 });
