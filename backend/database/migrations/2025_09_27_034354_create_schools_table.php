@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('school_name');
             $table->text('address');
             $table->string('principal_name');
+            $table->string("level");
             $table->timestamps();
         });
     }

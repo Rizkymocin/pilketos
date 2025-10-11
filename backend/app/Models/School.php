@@ -11,6 +11,7 @@ class School extends Model
         'school_name',
         'address',
         'principal_name',
+        'level'
     ];
 
     public function pic(){

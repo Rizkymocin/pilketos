@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ClassController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\SchoolController;
 use App\Models\Department;
@@ -30,4 +31,5 @@ Route::middleware("auth:sanctum")->group(function() {
     Route::get('/departmentsBySchoolPic', [DepartmentController::class, 'getDepartmentsBySchoolPic']);
     Route::post('/departmentByPic', [DepartmentController::class, 'storeByPic']);
     Route::apiResource('department', DepartmentController::class);
+    Route::apiResource('class', ClassController::class);
 });

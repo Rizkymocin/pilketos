@@ -51,6 +51,7 @@ class AuthController extends Controller
             'school_name' => $validated['school']['sekolah'],
             'address' => $validated['school']['alamat_jalan'] . ' ' . $validated['school']['kecamatan'] . ' ' . $validated['school']['kabupaten_kota'] . ' ' . $validated['school']['propinsi'],
             'principal_name' => '',
+            'level' => $validated['school']['bentuk']
         ]);
 
         $user->assignRole('pic');

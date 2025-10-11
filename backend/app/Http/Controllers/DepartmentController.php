@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
 use App\Models\SchoolPic;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -20,11 +21,13 @@ class DepartmentController extends Controller
         $email = $request->user()->email;
 
         $user = User::where('email', $email)->first();
-        $pic = SchoolPic::where('user_id', $user->id)->with('school.departments')->first();
+        $pic = SchoolPic::where('user_id', $user->id)->first();
+        $departments = Department::where('school_id', $pic->school_id)->with('school_class')->get();
+
 
         return response()->json([
             'status' => true,
-            'data' => $pic->school->departments ?? null
+            'data' => $departments ?? null
         ]);
     }
 

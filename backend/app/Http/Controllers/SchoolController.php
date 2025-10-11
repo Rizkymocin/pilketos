@@ -19,7 +19,15 @@ class SchoolController extends Controller
         $user = User::where('email', $email)->first();
         $pic = SchoolPic::where('user_id', $user->id)->with('school')->first();
 
+        if($pic === null) {
+            return response()->json([
+                'status' => false,
+                'message' => 'PIC not found'
+            ]);
+        }
+
         return response()->json([
+            'status' => true,
             'data' => $pic->school ?? null
         ]);
     }
